@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>External Merge Sort</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<div class="w">
+
+  <div class="bar">
+    <div class="cg">
+      <label>Numbers</label>
+      <input type="text" id="inputNums" value="38 27 43 3 9 82 10 1 55 17 65 24 7 44 99 12">
+    </div>
+    <div class="cg">
+      <label>Upload .bin</label>
+      <div style="display:flex;align-items:center;gap:6px">
+        <label class="file-label" for="fileInput">Chon file</label>
+        <input type="file" id="fileInput" accept=".bin" style="display:none">
+        <span id="fileNameLabel" style="font-size:10px;color:var(--a3);opacity:.6;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">—</span>
+      </div>
+    </div>
+    <div class="cg">
+      <label>Chunk</label>
+      <input type="number" id="chunkSize" value="4" min="2" max="8">
+    </div>
+    <div class="cg">
+      <label>K (merge)</label>
+      <input type="number" id="kWay" value="2" min="2" max="16">
+    </div>
+    <div class="cg">
+      <label>Speed</label>
+      <div style="display:flex;align-items:center;gap:6px">
+        <input type="range" id="speed" min="200" max="2500" value="900" step="100">
+        <span id="spL">900ms</span>
+      </div>
+    </div>
+    <div class="btns">
+      <button class="bRun"   id="btnStart">Start</button>
+      <button class="bBack"  id="btnBack"  disabled>Back</button>
+      <button class="bStep"  id="btnStep"  disabled>Step</button>
+      <button class="bAuto"  id="btnAuto"  disabled>Auto</button>
+      <button class="bReset" id="btnReset">Reset</button>
+    </div>
+  </div>
+
+  <div class="zones">
+    <div class="zone zr" id="zoneRam">
+      <div class="zh">
+        <span id="ramIcon"></span>
+        <span id="ramZoneTitle">RAM</span>
+      </div>
+      <div class="zb" id="ramBody">
+        <div class="slots" id="ramSlots"></div>
+      </div>
+    </div>
+    <div class="zone zd">
+      <div class="zh"><span>Disk</span></div>
+      <div class="zb">
+        <div class="dg" id="hddGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="out">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+      <div class="ol">Sorted Output</div>
+      <button class="bSave" id="btnSave" disabled>Luu .txt</button>
+    </div>
+    <div class="on2" id="outputNums"></div>
+  </div>
+
+</div>
+<script src="../static/app.js"></script>
+</body>
+</html>
